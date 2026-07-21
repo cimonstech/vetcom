@@ -23,6 +23,22 @@ export const siteConfig = {
   },
 } as const;
 
+export const about = {
+  intro:
+    "VETCOM Communication is a Ghanaian-owned telecommunications, ICT, and engineering solutions company delivering innovative, reliable infrastructure that keeps businesses, institutions, and communities connected.",
+  paragraphs: [
+    "VETCOM Communication is a Ghanaian-owned telecommunications, ICT, and engineering solutions company dedicated to delivering innovative, reliable, and cost-effective communication infrastructure and technology services. We provide comprehensive solutions that enable businesses, institutions, and communities to stay connected, secure, and technologically advanced.",
+    "Our team combines technical expertise with industry best practices to design, install, maintain, and support communication systems that meet international standards. We are committed to excellence, professionalism, integrity, and customer satisfaction in every project we undertake.",
+    "As technology continues to evolve, VETCOM Communication remains focused on providing cutting-edge solutions that enhance operational efficiency, improve connectivity, and drive sustainable growth for our clients.",
+  ],
+  vision:
+    "To become Ghana's leading telecommunications and ICT solutions provider, recognized for innovation, quality, and customer satisfaction across Africa.",
+  mission:
+    "To deliver world-class telecommunications, ICT, and engineering solutions through innovation, professionalism, integrity, and excellent customer service while building lasting partnerships with our clients.",
+  commitment:
+    "At VETCOM Communication, we believe that communication is the foundation of growth. We are committed to delivering dependable telecommunications and ICT solutions that empower businesses, strengthen institutions, and connect communities. Our goal is to build lasting relationships by consistently providing quality services that exceed client expectations.",
+} as const;
+
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -155,6 +171,12 @@ export const coreValues = [
   { title: "Professionalism", description: "Qualified experts delivering reliable service." },
   { title: "Customer Focus", description: "Solutions tailored to exceed client expectations." },
   { title: "Partnership", description: "Building lasting relationships with every client." },
+] as const;
+
+export const homeStats = [
+  { label: "Core Service Areas", value: "8+" },
+  { label: "Industries Served", value: "13" },
+  { label: "Client-Focused Values", value: "6" },
 ] as const;
 
 export const whyChooseUs = [
