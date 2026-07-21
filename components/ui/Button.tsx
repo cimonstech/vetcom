@@ -1,11 +1,15 @@
 import Link from "next/link";
-import { type ComponentPropsWithoutRef } from "react";
+import {
+  type ComponentPropsWithoutRef,
+  type MouseEventHandler,
+} from "react";
 
 type ButtonVariant = "primary" | "secondary" | "outline";
 
-interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
+interface ButtonProps extends Omit<ComponentPropsWithoutRef<"button">, "onClick"> {
   variant?: ButtonVariant;
   href?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -22,6 +26,7 @@ export function Button({
   href,
   className = "",
   children,
+  onClick,
   ...props
 }: ButtonProps) {
   const baseStyles =
@@ -31,14 +36,14 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combined} onClick={props.onClick}>
+      <Link href={href} className={combined} onClick={onClick}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={combined} {...props}>
+    <button className={combined} onClick={onClick} {...props}>
       {children}
     </button>
   );
