@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <rect width="48" height="48" rx="6" fill="#0B1F3A"/>
+  <path d="M12 32V16h6l6 10 6-10h6v16h-5V22l-5.5 9h-3L16 22v10h-4z" fill="#D4AF37"/>
+  <text x="56" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#0B1F3A">VETCOM</text>
+  <text x="56" y="38" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="#64748B" letter-spacing="1.5">COMMUNICATION</text>
+</svg>
