@@ -30,6 +30,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 15px;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 /* Gradient headings */
@@ -83,6 +90,9 @@ body {
 .eyebrow {
   color: var(--gold);
   letter-spacing: 0.14em;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 /* Soft section wash */

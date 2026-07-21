@@ -20,7 +20,7 @@ export function WhyChooseUsSection() {
         />
 
         <div>
-          <p className="eyebrow text-sm font-semibold uppercase">Why VETCOM</p>
+          <p className="eyebrow">Why VETCOM</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             <span className="text-gradient">Why Choose</span>{" "}
             <span className="highlight-gold">VETCOM Communication?</span>

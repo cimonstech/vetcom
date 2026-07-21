@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/constants/site";
 export default function SiteNotFound() {
   return (
     <Container className="flex flex-col items-center py-24 text-center">
-      <p className="text-sm font-semibold uppercase tracking-widest text-gold">404</p>
+      <p className="eyebrow">404</p>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
         Page not found
       </h1>

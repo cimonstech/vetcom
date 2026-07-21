@@ -19,7 +19,7 @@ export function IndustriesPreview() {
           />
 
           <div>
-            <p className="eyebrow text-sm font-semibold uppercase">Who We Serve</p>
+            <p className="eyebrow">Who We Serve</p>
             <h2 className="text-gradient mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Industries We Serve
             </h2>

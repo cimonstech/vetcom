@@ -12,7 +12,7 @@ export async function BlogPreview() {
     <section className="section-wash py-14 sm:py-20 lg:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow text-sm font-semibold uppercase">
+          <p className="eyebrow">
             Insights
           </p>
           <h2 className="text-gradient mt-3 text-3xl font-bold tracking-tight sm:text-4xl">

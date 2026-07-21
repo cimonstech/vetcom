@@ -43,7 +43,7 @@ export default function AboutPage() {
       <section className="section-wash py-14 sm:py-20 lg:py-24">
         <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div>
-            <p className="eyebrow text-sm font-semibold uppercase">
+            <p className="eyebrow">
               Company Profile
             </p>
             <h2 className="text-gradient mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -100,7 +100,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-navy/80" />
         <Container className="relative">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+            <p className="eyebrow">
               What Drives Us
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -136,7 +136,7 @@ export default function AboutPage() {
       <section id="why-us" className="bg-navy py-16 text-white sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+            <p className="eyebrow">
               Why VETCOM
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -164,7 +164,7 @@ export default function AboutPage() {
           <p className="mt-6 text-xl font-medium leading-relaxed text-navy sm:text-2xl">
             {about.commitment}
           </p>
-          <p className="mt-6 text-sm font-semibold uppercase tracking-widest text-gray-500">
+          <p className="eyebrow mt-6 !text-gray-500">
             {siteConfig.name}
           </p>
           <p className="text-sm text-gray-500">{siteConfig.tagline}</p>

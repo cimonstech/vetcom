@@ -30,7 +30,7 @@ export function CoreValuesSection() {
 
       <Container className="relative">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+          <p className="eyebrow">
             What Drives Us
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">

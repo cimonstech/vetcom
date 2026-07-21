@@ -19,7 +19,7 @@ export function AboutPreview() {
         />
 
         <div className="lg:order-1">
-          <p className="eyebrow text-sm font-semibold uppercase">About Us</p>
+          <p className="eyebrow">About Us</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             <span className="text-gradient">Connecting People.</span>{" "}
             <span className="text-gradient-gold">Powering Possibilities.</span>

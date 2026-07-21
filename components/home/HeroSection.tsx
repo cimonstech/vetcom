@@ -24,9 +24,6 @@ export function HeroSection() {
 
       <Container className="relative z-10 py-16 sm:py-24 lg:py-32">
         <HeroMotion className="max-w-2xl">
-          <p data-hero-item className="mb-3 text-sm font-semibold uppercase tracking-widest text-gold sm:mb-4">
-            {siteConfig.name}
-          </p>
           <h1
             data-hero-item
             className="text-3xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl"
@@ -35,7 +32,7 @@ export function HeroSection() {
             <br />
             <span className="text-gradient-gold">Powering Possibilities.</span>
           </h1>
-          <p data-hero-item className="mt-5 text-base leading-relaxed text-gray-100 sm:mt-6 sm:text-lg">
+          <p data-hero-item className="mt-5 text-[15px] leading-relaxed text-gray-100 sm:mt-6 sm:text-lg">
             {siteConfig.description}
           </p>
           <div data-hero-item className="mt-7 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">

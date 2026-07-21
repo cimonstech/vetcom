@@ -52,7 +52,7 @@ export default function ServicesPage() {
           </div>
 
           <div>
-            <p className="eyebrow text-sm font-semibold uppercase">
+            <p className="eyebrow">
               Our Best Services
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -144,7 +144,7 @@ export default function ServicesPage() {
       <section className="bg-gray-light py-16 sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+            <p className="eyebrow">
               Full Catalogue
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
@@ -205,7 +205,7 @@ export default function ServicesPage() {
       <section className="py-16 sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+            <p className="eyebrow">
               Why Clients Choose Us
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
