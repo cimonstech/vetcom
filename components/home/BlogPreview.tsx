@@ -9,19 +9,19 @@ export async function BlogPreview() {
   const posts = await getLatestPublishedPosts(3);
 
   return (
-    <section className="py-16 sm:py-24">
+    <section className="section-wash py-14 sm:py-20 lg:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+          <p className="eyebrow text-sm font-semibold uppercase">
             Insights
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+          <h2 className="text-gradient mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             Latest From Our Blog
           </h2>
         </div>
 
         {posts.length > 0 ? (
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {posts.map((post) => (
               <Link
                 key={post.id}

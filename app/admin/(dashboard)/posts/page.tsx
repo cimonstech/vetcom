@@ -25,24 +25,24 @@ export default async function AdminPostsPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-navy">Blog Posts</h1>
+          <h1 className="text-xl font-bold text-navy sm:text-2xl">Blog Posts</h1>
           <p className="mt-1 text-sm text-gray-500">{posts.length} post{posts.length === 1 ? "" : "s"} total</p>
         </div>
-        <Button href="/admin/posts/new" variant="primary">
+        <Button href="/admin/posts/new" variant="primary" className="w-full sm:w-auto">
           <Plus className="mr-1.5 size-4" />
           New Post
         </Button>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-xl border border-gray-200 bg-white">
+      <div className="mt-6 overflow-x-auto rounded-xl border border-gray-200 bg-white">
         {posts.length === 0 ? (
           <p className="p-10 text-center text-sm text-gray-500">
             No posts yet. Click &ldquo;New Post&rdquo; to create your first one.
           </p>
         ) : (
-          <table className="w-full text-left text-sm">
+          <table className="w-full min-w-[640px] text-left text-sm">
             <thead className="border-b border-gray-200 bg-gray-50 text-xs uppercase tracking-wide text-gray-500">
               <tr>
                 <th className="px-5 py-3 font-medium">Title</th>

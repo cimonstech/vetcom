@@ -7,7 +7,7 @@ export const siteImages = {
   logo: "/main/vetcomlogo.png",
   /** Full wordmark — white background (header, login, light chrome). */
   logoOnLight: "/main/vetcomlogo.jpeg",
-  favicon: "/main/vetcomfavicon.png",
+  favicon: "/main/favicon.ico",
   icon: "/main/vetcomicon.png",
 
   homeHero: "/main/vetcom-home-hero.jpg",

@@ -46,10 +46,10 @@ export function PageHero({ title, description, breadcrumbs = [], image }: PageHe
       <div className={`absolute inset-0 ${image ? "bg-navy/75" : ""}`} />
       <HeroNetworkEffect className="z-[1]" opacity={0.45} particleCount={55} />
       <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-navy-light/40 via-transparent to-transparent" />
-      <Container className="relative z-10 py-14 sm:py-20">
+      <Container className="relative z-10 py-12 sm:py-16 lg:py-20">
         <HeroMotion>
           <nav aria-label="Breadcrumb" data-hero-item>
-            <ol className="flex items-center gap-1.5 text-sm text-gray-300">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-300">
               <li className="flex items-center gap-1.5">
                 <Link href="/" className="flex items-center gap-1 transition-colors hover:text-gold">
                   <Home className="size-3.5" />
@@ -78,14 +78,14 @@ export function PageHero({ title, description, breadcrumbs = [], image }: PageHe
 
           <h1
             data-hero-item
-            className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+            className="mt-4 text-2xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
           >
             {title}
           </h1>
           {description && (
             <p
               data-hero-item
-              className="mt-4 max-w-2xl text-base leading-relaxed text-gray-200 sm:text-lg"
+              className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-200 sm:mt-4 sm:text-base lg:text-lg"
             >
               {description}
             </p>

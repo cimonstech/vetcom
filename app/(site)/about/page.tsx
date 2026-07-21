@@ -16,6 +16,7 @@ import {
 
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
+import { TiltMedia } from "@/components/motion/TiltMedia";
 import { Container } from "@/components/ui/Container";
 import { pageHeroImages, siteImages } from "@/lib/constants/images";
 import { about, coreValues, siteConfig, whyChooseUs } from "@/lib/constants/site";
@@ -39,13 +40,13 @@ export default function AboutPage() {
 
       {/* Company profile */}
       <Reveal>
-      <section className="py-16 sm:py-24">
-        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <section className="section-wash py-14 sm:py-20 lg:py-24">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+            <p className="eyebrow text-sm font-semibold uppercase">
               Company Profile
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+            <h2 className="text-gradient mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Who We Are
             </h2>
             <div className="mt-6 space-y-4 leading-relaxed text-gray-600">
@@ -54,15 +55,12 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-            <Image
-              src={siteImages.vsat}
-              alt="VSAT installation near a commercial building"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+          <TiltMedia
+            src={siteImages.vsat}
+            alt="VSAT installation near a commercial building"
+            className="relative aspect-[4/3] overflow-hidden rounded-xl shadow-lg shadow-navy/10"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </Container>
       </section>
       </Reveal>

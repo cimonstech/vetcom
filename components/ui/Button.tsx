@@ -31,7 +31,7 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combined}>
+      <Link href={href} className={combined} onClick={props.onClick}>
         {children}
       </Link>
     );

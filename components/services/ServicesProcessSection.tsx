@@ -33,7 +33,11 @@ export function ServicesProcessSection() {
 
   return (
     <section className="grid lg:grid-cols-2">
-      <div className="bg-navy px-6 py-16 text-white sm:px-10 sm:py-20 lg:px-16">
+      {/*
+        Left padding matches site Container (max-w-7xl + px-4/6/8)
+        so the heading lines up with the cards above.
+      */}
+      <div className="bg-navy py-16 text-white sm:py-20 pl-4 sm:pl-6 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] pr-6 sm:pr-10 lg:pr-14">
         <div className="max-w-xl">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             We Organize Our Delivery Process

@@ -26,11 +26,11 @@ export default function ContactPage() {
         image={pageHeroImages.contact}
       />
 
-      <section className="py-16 sm:py-24">
+      <section className="section-wash py-14 sm:py-20 lg:py-24">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-3">
-            <div className="rounded-xl border border-gray-200 p-6 text-center">
-              <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-navy/5 text-navy">
+          <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
+            <div className="rounded-xl border border-gold/15 bg-gradient-to-b from-white to-gold/5 p-5 text-center sm:p-6">
+              <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-navy text-gold">
                 <MapPin className="size-5" />
               </span>
               <h3 className="mt-4 font-semibold text-navy">Our Office</h3>

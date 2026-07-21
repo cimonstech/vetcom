@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
+import { TiltMedia } from "@/components/motion/TiltMedia";
 import { ServicesProcessSection } from "@/components/services/ServicesProcessSection";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -33,31 +34,30 @@ export default function ServicesPage() {
 
       {/* Intro — image + numbered featured services */}
       <Reveal>
-      <section className="py-16 sm:py-24">
-        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <section className="section-wash py-14 sm:py-20 lg:py-24">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-xl sm:aspect-[5/6]">
-              <Image
-                src={siteImages.telecom}
-                alt="Telecommunications infrastructure by VETCOM"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-4 hidden max-w-[220px] rounded-xl bg-navy p-5 text-white shadow-lg sm:block lg:-right-8">
+            <TiltMedia
+              src={siteImages.telecom}
+              alt="Telecommunications infrastructure by VETCOM"
+              className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-lg shadow-navy/10 sm:aspect-[5/6]"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+              maxTilt={7}
+            />
+            <div className="absolute -bottom-5 -right-2 z-10 hidden max-w-[200px] rounded-xl bg-gradient-to-br from-navy to-navy-light p-4 text-white shadow-lg sm:block sm:max-w-[220px] sm:p-5 lg:-right-6">
               <p className="text-3xl font-bold text-gold">{serviceCategories.length}+</p>
               <p className="mt-1 text-sm text-gray-300">Service categories delivered across Ghana</p>
             </div>
           </div>
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+            <p className="eyebrow text-sm font-semibold uppercase">
               Our Best Services
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-              We Provide Reliable Telecom &amp; ICT Solutions
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              <span className="text-gradient">We Provide Reliable</span>{" "}
+              <span className="text-gradient-gold">Telecom &amp; ICT Solutions</span>
             </h2>
             <p className="mt-4 leading-relaxed text-gray-600">
               From fibre networks and data centres to security, power, and NCA compliance —

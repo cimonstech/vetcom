@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
   icons: {
-    icon: siteImages.favicon,
-    apple: siteImages.favicon,
+    icon: [{ url: siteImages.favicon }, { url: siteImages.icon, type: "image/png" }],
+    apple: siteImages.icon,
   },
 };
 

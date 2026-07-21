@@ -13,16 +13,16 @@ export function Footer() {
   return (
     <footer className="bg-navy text-white">
       <Container className="py-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-2 lg:col-span-1">
             <Link href="/" className="mb-4 inline-block rounded-md bg-white px-3 py-2">
               <Image
                 src={siteImages.logo}
                 alt={siteConfig.name}
-                width={200}
-                height={56}
-                className="h-10 w-auto"
+                width={240}
+                height={68}
+                className="h-11 w-auto sm:h-12"
               />
             </Link>
             <p className="text-sm leading-relaxed text-gray-300">
