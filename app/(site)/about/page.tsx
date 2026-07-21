@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Award,
   CircleCheck,
@@ -14,7 +15,9 @@ import {
 } from "lucide-react";
 
 import { PageHero } from "@/components/layout/PageHero";
+import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
+import { pageHeroImages, siteImages } from "@/lib/constants/images";
 import { about, coreValues, siteConfig, whyChooseUs } from "@/lib/constants/site";
 
 export const metadata: Metadata = {
@@ -31,26 +34,41 @@ export default function AboutPage() {
         title="About VETCOM Communication"
         description="A Ghanaian-owned telecommunications, ICT, and engineering solutions company connecting people and powering possibilities."
         breadcrumbs={[{ label: "About" }]}
+        image={pageHeroImages.about}
       />
 
       {/* Company profile */}
+      <Reveal>
       <section className="py-16 sm:py-24">
-        <Container className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gold">
-            Company Profile
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-            Who We Are
-          </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-gray-600">
-            {about.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
+        <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+              Company Profile
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+              Who We Are
+            </h2>
+            <div className="mt-6 space-y-4 leading-relaxed text-gray-600">
+              {about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+            <Image
+              src={siteImages.vsat}
+              alt="VSAT installation near a commercial building"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </Container>
       </section>
+      </Reveal>
 
       {/* Vision & Mission */}
+      <Reveal>
       <section className="bg-gray-light py-16 sm:py-24">
         <Container className="grid gap-6 sm:grid-cols-2">
           <div className="rounded-xl bg-white p-8 shadow-sm">
@@ -69,15 +87,25 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+      </Reveal>
 
       {/* Core values */}
-      <section id="values" className="py-16 sm:py-24">
-        <Container>
+      <Reveal>
+      <section id="values" className="relative overflow-hidden py-16 text-white sm:py-24">
+        <Image
+          src={siteImages.coreValues}
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy/80" />
+        <Container className="relative">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-gold">
               What Drives Us
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               Our Core Values
             </h2>
           </div>
@@ -88,13 +116,13 @@ export default function AboutPage() {
               return (
                 <div
                   key={value.title}
-                  className="rounded-xl border border-gray-200 p-6 transition-colors hover:border-gold/50"
+                  className="rounded-xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm transition-colors hover:border-gold/50"
                 >
-                  <span className="flex size-11 items-center justify-center rounded-lg bg-navy/5 text-navy">
+                  <span className="flex size-11 items-center justify-center rounded-lg bg-gold text-navy">
                     <Icon className="size-5" />
                   </span>
-                  <h3 className="mt-4 font-semibold text-navy">{value.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  <h3 className="mt-4 font-semibold text-white">{value.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-200">
                     {value.description}
                   </p>
                 </div>
@@ -103,8 +131,10 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+      </Reveal>
 
       {/* Why choose us */}
+      <Reveal>
       <section id="why-us" className="bg-navy py-16 text-white sm:py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
@@ -126,8 +156,10 @@ export default function AboutPage() {
           </ul>
         </Container>
       </section>
+      </Reveal>
 
       {/* Commitment */}
+      <Reveal>
       <section className="py-16 sm:py-24">
         <Container className="max-w-3xl text-center">
           <Quote className="mx-auto size-8 text-gold" />
@@ -140,6 +172,7 @@ export default function AboutPage() {
           <p className="text-sm text-gray-500">{siteConfig.tagline}</p>
         </Container>
       </section>
+      </Reveal>
     </>
   );
 }

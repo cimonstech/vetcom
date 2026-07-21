@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { siteImages } from "@/lib/constants/images";
 import { siteConfig } from "@/lib/constants/site";
 
 import "./globals.css";
@@ -18,6 +19,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: siteImages.favicon,
+    apple: siteImages.favicon,
+  },
 };
 
 export default function RootLayout({

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { PostForm } from "@/components/admin/PostForm";
 import {
   getAllCategories,
+  getAllMedia,
   getAllTags,
   getPostCategoryIds,
   getPostForEdit,
@@ -22,10 +23,11 @@ interface EditPostPageProps {
 export default async function EditPostPage({ params }: EditPostPageProps) {
   const { id } = await params;
 
-  const [post, categories, tags] = await Promise.all([
+  const [post, categories, tags, media] = await Promise.all([
     getPostForEdit(id),
     getAllCategories(),
     getAllTags(),
+    getAllMedia(),
   ]);
 
   if (!post) notFound();
@@ -42,6 +44,7 @@ export default async function EditPostPage({ params }: EditPostPageProps) {
         post={post}
         categories={categories}
         tags={tags}
+        media={media}
         selectedCategoryIds={selectedCategoryIds}
         selectedTagIds={selectedTagIds}
       />

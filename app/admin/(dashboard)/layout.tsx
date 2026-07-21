@@ -1,12 +1,18 @@
 import { LogOut } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { logout } from "@/app/admin/login/actions";
 import { AdminNav } from "@/components/admin/AdminNav";
+import { siteImages } from "@/lib/constants/images";
 import { siteConfig } from "@/lib/constants/site";
 import { createClient } from "@/lib/supabase/server";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 export default async function AdminDashboardLayout({
   children,
@@ -23,13 +29,13 @@ export default async function AdminDashboardLayout({
   return (
     <div className="flex min-h-screen bg-gray-light">
       <aside className="flex w-64 flex-col bg-navy px-4 py-6">
-        <Link href="/" className="mb-8 flex items-center px-2">
+        <Link href="/" className="mb-8 flex items-center rounded-md bg-white px-2 py-2">
           <Image
-            src="/logo.svg"
+            src={siteImages.logo}
             alt={siteConfig.name}
-            width={160}
-            height={40}
-            className="h-9 w-auto brightness-0 invert"
+            width={180}
+            height={48}
+            className="h-9 w-auto"
           />
         </Link>
 

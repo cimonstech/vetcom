@@ -7,19 +7,36 @@ import { IndustriesPreview } from "@/components/home/IndustriesPreview";
 import { ServiceIconsStrip } from "@/components/home/ServiceIconsStrip";
 import { ServicesHighlight } from "@/components/home/ServicesHighlight";
 import { WhyChooseUsSection } from "@/components/home/WhyChooseUs";
+import { Reveal } from "@/components/motion/Reveal";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <ServiceIconsStrip />
-      <AboutPreview />
-      <CoreValuesSection />
-      <ServicesHighlight />
-      <IndustriesPreview />
-      <WhyChooseUsSection />
-      <BlogPreview />
-      <ContactTeaser />
+      <Reveal>
+        <ServiceIconsStrip />
+      </Reveal>
+      <Reveal>
+        <AboutPreview />
+      </Reveal>
+      <Reveal>
+        <CoreValuesSection />
+      </Reveal>
+      <Reveal>
+        <ServicesHighlight />
+      </Reveal>
+      <Reveal>
+        <IndustriesPreview />
+      </Reveal>
+      <Reveal>
+        <WhyChooseUsSection />
+      </Reveal>
+      <Reveal>
+        <BlogPreview />
+      </Reveal>
+      <Reveal>
+        <ContactTeaser />
+      </Reveal>
     </>
   );
 }

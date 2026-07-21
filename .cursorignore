@@ -1,0 +1,9 @@
+# Prevent the AI agent from reading/indexing secrets and local env files.
+.env
+.env.*
+!.env.local.example
+
+# Other common secret locations
+*.pem
+*.key
+supabase/.temp/

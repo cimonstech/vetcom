@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
-import type { Category, Media, Post, Tag } from "@/lib/types/database";
+import type { Category, ContactSubmission, Media, Post, Tag } from "@/lib/types/database";
 
 export interface PostCounts {
   total: number;
@@ -67,6 +67,17 @@ export async function getAllMedia(): Promise<Media[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("media")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error || !data) return [];
+  return data;
+}
+
+export async function getContactSubmissions(): Promise<ContactSubmission[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("contact_submissions")
     .select("*")
     .order("created_at", { ascending: false });
 

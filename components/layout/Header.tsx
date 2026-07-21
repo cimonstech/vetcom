@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { siteImages } from "@/lib/constants/images";
 import { navLinks, siteConfig } from "@/lib/constants/site";
 
 export function Header() {
@@ -19,12 +20,12 @@ export function Header() {
       <Container className="flex items-center justify-between py-3">
         <Link href="/" className="flex shrink-0 items-center" onClick={() => setMobileOpen(false)}>
           <Image
-            src="/logo.svg"
+            src={siteImages.logoOnLight}
             alt={siteConfig.name}
-            width={180}
-            height={44}
+            width={200}
+            height={56}
             priority
-            className="h-10 w-auto"
+            className="h-11 w-auto"
           />
         </Link>
 

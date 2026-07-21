@@ -7,6 +7,7 @@ import { BlogSidebar } from "@/components/blog/BlogSidebar";
 import { Pagination } from "@/components/blog/Pagination";
 import { PostCard } from "@/components/blog/PostCard";
 import { Container } from "@/components/ui/Container";
+import { pageHeroImages } from "@/lib/constants/images";
 import {
   getCategoriesWithCounts,
   getLatestPublishedPosts,
@@ -56,6 +57,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         title="Blog"
         description="Insights, news, and updates on telecommunications and ICT solutions in Ghana."
         breadcrumbs={[{ label: "Blog" }]}
+        image={pageHeroImages.blog}
       />
 
       <section className="py-16 sm:py-24">

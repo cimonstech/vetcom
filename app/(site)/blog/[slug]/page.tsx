@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import { CalendarDays } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { BlogSidebar } from "@/components/blog/BlogSidebar";
+import { HeroNetworkEffect } from "@/components/effects/HeroNetworkEffect";
+import { HeroMotion } from "@/components/motion/HeroMotion";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
+import { siteImages } from "@/lib/constants/images";
+import {
+  buildBlogPostingSchema,
+  buildBreadcrumbSchema,
+  withContext,
+} from "@/lib/seo/structured-data";
 import {
   getCategoriesWithCounts,
   getLatestPublishedPosts,
@@ -26,6 +36,14 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   return {
     title: post.title,
     description: post.excerpt ?? undefined,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt ?? undefined,
+      type: "article",
+      publishedTime: post.published_at ?? undefined,
+      modifiedTime: post.updated_at,
+      images: post.featured_image ? [{ url: post.featured_image }] : undefined,
+    },
   };
 }
 
@@ -42,12 +60,33 @@ export default async function PostPage({ params }: PostPageProps) {
     getLatestPublishedPosts(5),
   ]);
 
+  const structuredData = withContext([
+    buildBreadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.title },
+    ]),
+    buildBlogPostingSchema(post),
+  ]);
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <section className="relative overflow-hidden bg-navy text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-navy-light/40 via-transparent to-transparent" />
-        <Container className="relative py-14 sm:py-20">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-gray-300">
+        <Image
+          src={post.featured_image || siteImages.blogHero}
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy/75" />
+        <HeroNetworkEffect className="z-[1]" opacity={0.45} particleCount={55} />
+        <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-navy-light/40 via-transparent to-transparent" />
+        <Container className="relative z-10 py-14 sm:py-20">
+          <HeroMotion>
+          <nav data-hero-item aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-gray-300">
             <Link href="/" className="hover:text-gold">
               Home
             </Link>
@@ -59,11 +98,11 @@ export default async function PostPage({ params }: PostPageProps) {
             <span className="text-gold">{post.title}</span>
           </nav>
 
-          <h1 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 data-hero-item className="mt-4 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
             {post.title}
           </h1>
 
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-300">
+          <div data-hero-item className="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-300">
             {post.published_at && (
               <span className="flex items-center gap-1.5">
                 <CalendarDays className="size-4" />
@@ -84,6 +123,7 @@ export default async function PostPage({ params }: PostPageProps) {
               </Link>
             ))}
           </div>
+          </HeroMotion>
         </Container>
       </section>
 
@@ -91,6 +131,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <Container className="grid gap-12 lg:grid-cols-[2fr_1fr]">
           <article>
             {post.featured_image && (
+              // eslint-disable-next-line @next/next/no-img-element -- remote CMS/R2 URLs
               <img
                 src={post.featured_image}
                 alt={post.title}

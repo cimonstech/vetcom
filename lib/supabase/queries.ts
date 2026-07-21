@@ -148,6 +148,25 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
+/** Lightweight fields for sitemap generation. */
+export async function getPublishedPostsForSitemap(): Promise<
+  Pick<Post, "slug" | "updated_at" | "published_at" | "featured_image">[]
+> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from("posts")
+      .select("slug, updated_at, published_at, featured_image")
+      .eq("status", "published")
+      .order("published_at", { ascending: false });
+
+    if (error || !data) return [];
+    return data;
+  } catch {
+    return [];
+  }
+}
+
 export async function getCategoriesWithCounts(): Promise<CategoryWithCount[]> {
   try {
     const supabase = await createClient();

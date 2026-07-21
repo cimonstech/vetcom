@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { LoginForm } from "@/components/admin/LoginForm";
+import { siteImages } from "@/lib/constants/images";
 import { siteConfig } from "@/lib/constants/site";
 
 export const metadata: Metadata = {
@@ -21,7 +22,13 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
     <div className="flex min-h-screen items-center justify-center bg-gray-light px-4">
       <div className="w-full max-w-sm">
         <Link href="/" className="mb-8 flex justify-center">
-          <Image src="/logo.svg" alt={siteConfig.name} width={180} height={44} className="h-10 w-auto" />
+          <Image
+            src={siteImages.logoOnLight}
+            alt={siteConfig.name}
+            width={200}
+            height={56}
+            className="h-10 w-auto"
+          />
         </Link>
 
         <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">

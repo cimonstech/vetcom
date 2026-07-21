@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { PostForm } from "@/components/admin/PostForm";
-import { getAllCategories, getAllTags } from "@/lib/supabase/adminQueries";
+import { getAllCategories, getAllMedia, getAllTags } from "@/lib/supabase/adminQueries";
 
 export const metadata: Metadata = {
   title: "New Post",
@@ -9,12 +9,22 @@ export const metadata: Metadata = {
 };
 
 export default async function NewPostPage() {
-  const [categories, tags] = await Promise.all([getAllCategories(), getAllTags()]);
+  const [categories, tags, media] = await Promise.all([
+    getAllCategories(),
+    getAllTags(),
+    getAllMedia(),
+  ]);
 
   return (
     <div>
       <h1 className="mb-6 text-2xl font-bold text-navy">New Post</h1>
-      <PostForm categories={categories} tags={tags} selectedCategoryIds={[]} selectedTagIds={[]} />
+      <PostForm
+        categories={categories}
+        tags={tags}
+        media={media}
+        selectedCategoryIds={[]}
+        selectedTagIds={[]}
+      />
     </div>
   );
 }

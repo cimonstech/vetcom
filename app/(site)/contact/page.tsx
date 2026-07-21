@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Container } from "@/components/ui/Container";
+import { pageHeroImages } from "@/lib/constants/images";
 import { siteConfig } from "@/lib/constants/site";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function ContactPage() {
         title="Contact Us"
         description="Reach out for a consultation, quote, or support — we're ready to help connect your business."
         breadcrumbs={[{ label: "Contact" }]}
+        image={pageHeroImages.contact}
       />
 
       <section className="py-16 sm:py-24">

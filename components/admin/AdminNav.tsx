@@ -1,12 +1,13 @@
 "use client";
 
-import { FileText, Image as ImageIcon, LayoutDashboard, Tags } from "lucide-react";
+import { FileText, Image as ImageIcon, LayoutDashboard, Mail, Tags } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Posts", href: "/admin/posts", icon: FileText },
+  { label: "Messages", href: "/admin/messages", icon: Mail },
   { label: "Media", href: "/admin/media", icon: ImageIcon },
   { label: "Categories & Tags", href: "/admin/taxonomy", icon: Tags },
 ] as const;

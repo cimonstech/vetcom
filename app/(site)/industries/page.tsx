@@ -4,6 +4,7 @@ import { Building2 } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { pageHeroImages } from "@/lib/constants/images";
 import { industryIconMap } from "@/lib/constants/icons";
 import { industries } from "@/lib/constants/site";
 
@@ -20,6 +21,7 @@ export default function IndustriesPage() {
         title="Industries We Serve"
         description="From government institutions to SMEs, we deliver reliable communication solutions across diverse sectors."
         breadcrumbs={[{ label: "Industries" }]}
+        image={pageHeroImages.industries}
       />
 
       <section className="py-16 sm:py-24">
